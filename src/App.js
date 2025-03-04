@@ -22,8 +22,7 @@ function App() {
         </nav>
         <select onChange={(e) => setLang(e.target.value)}>
           <option value="en">English</option>
-          <option value="hi">Hindi</option>
-          <option value="sp">Spanish</option>
+
           <option value="ru">Russian</option>
         </select>
       </div>
@@ -32,7 +31,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Body />} />
           <Route element={<ProtectedRoute />}>
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About lang={lang} />} />
             <Route path="/team" element={<Team />} />
             <Route path="/login" element={<Login />} />
           </Route>
